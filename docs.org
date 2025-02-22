@@ -1,0 +1,44 @@
+#+title: SEED Website Docs
+
+* Front-end
+** Nuxt
+[[https://nuxt.com/][Nuxt]] é framework de front-end do projeto. Ele vai dar a linguagem pra expressar o que a gente quer desenhar na tela beleza? showw
+
+*Pros* que eu considerei:
++ Qualidade de vida para o desenvolvimento (saúde mental)
++ Flexibilidade: Vamos começar com Static Site Generation mas temos a possibilidade de construir algo dinâmico (conversar com API, Auth, etc.)
+
+*Cons* que eu considerei:
++ nenhum 🔥🔥🔥
+
+*** Iniciar o projeto
+=nuxi init= vai perguntar qual package manager queremos usar. Para o projeto escolhi [[https://yarnpkg.com/][yarn]].
+
+#+begin_src sh
+# criar o projeto
+npx nuxi init seed_website
+cd seed_website
+
+# instalar dependencias
+yarn install
+#+end_src
+
+*** Tailwind
++ [[https://tailwindcss.com/][tailwindcss website]]
+
+Adicionar dependência:
+#+begin_src sh
+yarn add -D @nuxtjs/tailwindcss
+#+end_src
+
+Adicionar o módulo à configuração do Nuxt:
+#+begin_src typescript
+export default defineNuxtConfig({
+  modules: ['@nuxtjs/tailwindcss']
+})
+#+end_src
+
+*** Rodar projeto
+#+begin_src sh
+yarn dev
+#+end_src
