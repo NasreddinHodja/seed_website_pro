@@ -1,6 +1,9 @@
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    oiee
+    <NuxtLayout>
+      <div>
+        <NuxtPage />
+      </div>
+    </NuxtLayout>
   </div>
 </template>

@@ -11,7 +11,7 @@
 *Cons* que eu considerei:
 + nenhum 🔥🔥🔥
 
-*** Iniciar o projeto
+*** Iniciar projeto
 =nuxi init= vai perguntar qual package manager queremos usar. Para o projeto escolhi [[https://yarnpkg.com/][yarn]].
 
 #+begin_src sh
@@ -28,17 +28,26 @@ yarn install
 
 Adicionar dependência:
 #+begin_src sh
-yarn add -D @nuxtjs/tailwindcss
-#+end_src
-
-Adicionar o módulo à configuração do Nuxt:
-#+begin_src typescript
-export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss']
-})
+npx nuxi@latest module add tailwindcss
 #+end_src
 
 *** Rodar projeto
 #+begin_src sh
 yarn dev
 #+end_src
+
+*** Gerar o site estático
+Gerar usando o [[https://nuxt.com/docs/api/commands/generate][Static Site Generation (SSG) do Nuxt]]:
+#+begin_src sh
+yarn generate
+#+end_src
+
+Servir localmente site gerado:
+#+begin_src sh
+npx serve ./dist
+#+end_src
+
+*** Estrutura do projeto
++ [ ] components/
++ [ ] pages/
++ [ ] layout/
