@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npx nuxi build",
     "dev": "npx nuxi dev",
-    "sserve": "npx serve .nuxt/dist",
+    "sserve": "npx serve .output/public",
     "generate": "npx nuxi generate",
     "preview": "npx nuxi preview",
     "postinstall": "npx nuxi prepare"
