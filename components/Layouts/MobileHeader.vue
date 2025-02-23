@@ -48,22 +48,34 @@ const selectedItem = computed(() => {
         </div>
       </div>
 
-      <div
-        v-if="choicesOpen"
-        class="absolute left-0 top-[125px] w-full flex flex-col transition px-6 py-6 z-50 bg-black"
+      <Transition
+        enter-active-class="duration-75 ease-out opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="duration-75 ease-in"
+        leave-class="opacity-100"
+        leave-to-class="opacity-0"
       >
-        <div class="w-full flex flex-col transition border-2 border-white p-4">
+        <div
+          v-if="choicesOpen"
+          class="absolute left-0 top-[125px] w-full flex flex-col transition px-6 py-6 z-50 bg-black"
+        >
           <div
-            v-for="(item, index) in choices"
-            :key="index"
-            :class="{
-              'text-gray-500': item.to !== selectedItem?.to,
-            }"
+            class="w-full flex flex-col transition border-2 border-white p-4"
           >
-            <NuxtLink :to="item.to">>{{ item.label }}</NuxtLink>
+            <div
+              v-for="(item, index) in choices"
+              :key="index"
+              :class="{
+                'text-gray-500': item.to !== selectedItem?.to,
+              }"
+            >
+              <NuxtLink :to="item.to" @click="choicesOpen = false"
+                >>{{ item.label }}</NuxtLink
+              >
+            </div>
           </div>
         </div>
-      </div>
+      </Transition>
     </div>
   </div>
 </template>

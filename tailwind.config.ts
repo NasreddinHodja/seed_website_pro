@@ -3,6 +3,6 @@ module.exports = {
     fontFamily: {
       mono: ['Azeret Mono'],
       header: ['Monument Ext']
-    }
+    },
   }
 }
