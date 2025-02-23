@@ -3,12 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "sserve": "npx serve ./dist",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "build": "npx nuxi build",
+    "dev": "npx nuxi dev",
+    "sserve": "npx serve .nuxt/dist",
+    "generate": "npx nuxi generate",
+    "preview": "npx nuxi preview",
+    "postinstall": "npx nuxi prepare"
   },
   "dependencies": {
     "@nuxt/icon": "1.10.3",
