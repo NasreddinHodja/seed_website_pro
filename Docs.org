@@ -24,10 +24,9 @@ yarn install
 #+end_src
 
 *** Yarn commands
-Changing the =package.json= scripts to use =nuxi=
+Changing the =package.json= scripts to use =nuxi=:
 #+begin_src json package.json
 {
-  // ...
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev",
@@ -36,7 +35,6 @@ Changing the =package.json= scripts to use =nuxi=
     "preview": "nuxi preview",
     "postinstall": "nuxi prepare"
   },
-  // ...
 }
 #+end_src
 
