@@ -4,7 +4,7 @@ const items = HEADER_CHOICES;
 
 <template>
   <div
-    class="w-full font-header flex justify-center items-end h-40 gap-10 pb-2"
+    class="w-full font-header flex justify-between items-end h-40 pb-2 px-16"
   >
     <NuxtLink to="/"><div class="text text-5xl w-60">S.E.E.D.</div></NuxtLink>
     <div class="flex gap-2">
