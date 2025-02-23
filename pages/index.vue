@@ -21,7 +21,7 @@ const contacts = [
 
 <template>
   <div class="h-full w-full flex flex-col items-center justify-center">
-    <img class="px-10" src="@/public/images/seed_logo.png" />
+    <img class="px-10 pb-32" src="@/public/images/seed_logo.png" />
     <div class="absolute bottom-0 left-0 w-full flex flex-col px-4">
       <div
         class="w-full flex flex-col lg:flex-row lg:justify-between gap-2 pb-2"
