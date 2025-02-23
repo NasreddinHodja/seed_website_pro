@@ -39,10 +39,10 @@ const selectedItem = computed(() => {
         <div class="flex grow justify-between gap-4">
           <div v-if="selectedItem">{{ selectedItem.label }}</div>
           <div v-else>HOME</div>
-          <div v-if="choicesOpen">
+          <div @click.stop="choicesOpen = !choicesOpen" v-if="choicesOpen">
             <Icon name="meteor-icons:chevron-up" />
           </div>
-          <div v-else>
+          <div @click.stop="choicesOpen = !choicesOpen" v-else>
             <Icon name="meteor-icons:chevron-down" />
           </div>
         </div>
