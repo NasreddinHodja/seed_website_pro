@@ -14,9 +14,9 @@ const items = HEADER_CHOICES;
       </div>
     </div>
     <div class="w-60 pb-1 flex justify-start">
-      <NuxtLink to="/"
-        ><img src="@/public/images/e_logo.jpg" class="w-36 min-w-36 ml-3"
-      /></NuxtLink>
+      <NuxtLink to="/">
+        <img src="@/public/images/e_logo.jpg" class="w-36 min-w-36 ml-3" />
+      </NuxtLink>
     </div>
   </div>
 </template>

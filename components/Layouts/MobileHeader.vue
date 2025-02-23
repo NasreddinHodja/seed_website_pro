@@ -50,16 +50,18 @@ const selectedItem = computed(() => {
 
       <div
         v-if="choicesOpen"
-        class="absolute left-0 top-32 w-full flex flex-col transition border-2 border-white p-4 z-50 bg-black"
+        class="absolute left-0 top-[125px] w-full flex flex-col transition px-6 py-6 z-50 bg-black"
       >
-        <div
-          v-for="(item, index) in choices"
-          :key="index"
-          :class="{
-            'text-gray-500': item.to !== selectedItem?.to,
-          }"
-        >
-          <NuxtLink :to="item.to">>{{ item.label }}</NuxtLink>
+        <div class="w-full flex flex-col transition border-2 border-white p-4">
+          <div
+            v-for="(item, index) in choices"
+            :key="index"
+            :class="{
+              'text-gray-500': item.to !== selectedItem?.to,
+            }"
+          >
+            <NuxtLink :to="item.to">>{{ item.label }}</NuxtLink>
+          </div>
         </div>
       </div>
     </div>
