@@ -49,11 +49,12 @@ const selectedItem = computed(() => {
       </div>
 
       <Transition
-        enter-active-class="duration-75 ease-out opacity-0"
-        enter-to-class="opacity-100"
-        leave-active-class="duration-75 ease-in"
-        leave-class="opacity-100"
-        leave-to-class="opacity-0"
+        enter-active-class="duration-100 ease-out transition-all"
+        enter-from-class="opacity-0 max-h-0"
+        enter-to-class="opacity-100 max-h-full"
+        leave-active-class="duration-100 ease-out transition-all"
+        leave-class="opacity-100 max-h-full"
+        leave-to-class="opacity-0 max-h-0"
       >
         <div
           v-if="choicesOpen"
