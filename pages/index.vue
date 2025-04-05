@@ -1,33 +1,19 @@
 <script setup lang="ts">
-const contacts = [
-  {
-    href: "https://x.com/SEED_dao",
-    label: "{twit} @SEED_dao",
-  },
-  {
-    href: "https://www.instagram.com/seed.computer/",
-    label: "{inst} @seed.computer",
-  },
-  {
-    href: null,
-    label: "{mail} s.e.e.d_dao@protonmail.com",
-  },
-  {
-    href: "https://warpcast.com/~/channel/seedcomputer",
-    label: "{warp} seed channel",
-  },
-];
+import index from "@/content/index";
+
+const content = index.en;
+const contacts = content.contacts.links;
 </script>
 
 <template>
   <div class="h-full w-full flex flex-col items-center justify-center">
-    <img class="px-10 pb-32" src="@/public/images/seed_logo.png" />
+    <img class="px-10 pb-32" :src="content.backgroundImage" />
     <div class="absolute bottom-0 left-0 w-full flex flex-col px-4">
       <div
         class="w-full flex flex-col lg:flex-row lg:justify-between gap-2 pb-2"
       >
         <div class="flex flex-col gap-1">
-          <div class="font-header text-sm">Contact us</div>
+          <div class="font-header text-sm">{{ content.contacts.label }}</div>
 
           <div class="flex flex-col gap-0.5">
             <div
@@ -35,8 +21,8 @@ const contacts = [
               class="font-header text-xs text-gray-400"
             >
               <a
-                v-if="contact.href !== null"
-                :href="contact.href"
+                v-if="contact.url !== null"
+                :href="contact.url"
                 target="_blank"
                 rel="noopener noreferrer"
                 >{{ contact.label }}</a
