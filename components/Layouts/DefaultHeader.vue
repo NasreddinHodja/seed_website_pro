@@ -6,8 +6,7 @@ const items = HEADER_CHOICES;
   <div
     class="w-full font-header flex justify-between items-end h-40 pb-2 px-16"
   >
-    <NuxtLink to="/">
-      <div class="text text-5xl w-60">S.E.E.D.</div></NuxtLink>
+    <NuxtLink to="/"> <div class="text text-5xl w-60">S.E.E.D.</div></NuxtLink>
     <div class="flex gap-2">
       <div v-for="(item, index) in items" class="flex text-xl gap-2">
         <div v-if="index > 0">｜</div>
