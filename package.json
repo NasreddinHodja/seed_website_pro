@@ -8,7 +8,9 @@
     "lserve": "npx serve .output/public",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
-    "postinstall": "nuxi prepare"
+    "postinstall": "nuxi prepare",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@nuxt/icon": "1.10.3",
@@ -17,6 +19,8 @@
     "vue": "latest",
     "vue-router": "latest"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
