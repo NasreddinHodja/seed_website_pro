@@ -2,7 +2,7 @@ name: Pull Request Check
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, dev]
 
 jobs:
   check:
@@ -28,5 +28,5 @@ jobs:
       - name: Check code formatting
         run: yarn format:check
 
-      - name: Run Nuxt build
-        run: yarn build
+      - name: Run Nuxi Generate
+        run: yarn generate
