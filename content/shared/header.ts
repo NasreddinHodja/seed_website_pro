@@ -19,7 +19,7 @@ export default {
         to: "/merch",
       },
     ],
-    rightImage: "/images/e_logo.jpg"
+    rightImage: "/images/e_logo.jpg",
   },
   pt: {
     leftText: "S.E.E.D.",
@@ -41,6 +41,6 @@ export default {
         to: "/merch",
       },
     ],
-    rightImage: "/images/e_logo.jpg"
-  }
-}
+    rightImage: "/images/e_logo.jpg",
+  },
+};

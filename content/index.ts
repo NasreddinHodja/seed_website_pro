@@ -20,8 +20,8 @@ export default {
           url: "https://warpcast.com/~/channel/seedcomputer",
           label: "{warp} seed channel",
         },
-      ]
-    }
+      ],
+    },
   },
   pt: {
     backgroundImage: "/images/seed_logo.png",
@@ -44,7 +44,7 @@ export default {
           url: "https://warpcast.com/~/channel/seedcomputer",
           label: "{warp} seed channel",
         },
-      ]
-    }
+      ],
+    },
   },
-}
+};
