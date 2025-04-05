@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import header from "~/content/shared/header";
+
+const content = header["en"];
+
 const route = useRoute();
 
-const choices = HEADER_CHOICES;
+const choices = content.navigation;
 const choicesOpen = ref(false);
 
 const selectedItem = computed(() => {
@@ -19,10 +23,12 @@ const selectedItem = computed(() => {
     class="w-full font-header flex flex-col justify-center items-center gap-4 pb-2 pt-6 px-6"
   >
     <div class="w-full flex items-end justify-between">
-      <NuxtLink to="/"><div class="text text-3xl flex">S.E.E.D.</div></NuxtLink>
+      <NuxtLink to="/"
+        ><div class="text text-3xl flex">{{ content.leftText }}</div></NuxtLink
+      >
       <div class="pb-1 flex justify-end">
         <NuxtLink to="/"
-          ><img src="@/public/images/e_logo.jpg" class="w-24 min-w-24 ml-3"
+          ><img :src="content.rightImage" class="w-24 min-w-24 ml-3"
         /></NuxtLink>
       </div>
     </div>
@@ -38,7 +44,7 @@ const selectedItem = computed(() => {
       <div class="w-full text-xl" @click="choicesOpen = !choicesOpen">
         <div class="flex grow justify-between gap-4">
           <div v-if="selectedItem">{{ selectedItem.label }}</div>
-          <div v-else>HOME</div>
+          <div v-else>INDEX</div>
           <div @click.stop="choicesOpen = !choicesOpen" v-if="choicesOpen">
             <Icon name="meteor-icons:chevron-up" />
           </div>
