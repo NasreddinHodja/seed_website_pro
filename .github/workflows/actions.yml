@@ -1,16 +1,22 @@
-name: Pull Request Check
+name: PR Format & Check
 
 on:
   pull_request:
-    branches: [main, dev]
+    branches: [dev]
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  check:
+  format:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout PR branch
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Read Node version from .nvmrc
         id: node
@@ -25,8 +31,22 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Check code formatting
-        run: yarn format:check
+      - name: Format code
+        run: yarn prettier --write .
 
-      - name: Run Nuxi Generate
-        run: yarn generate
+      - name: Check if anything changed
+        id: changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "CHANGES=true" >> $GITHUB_ENV
+          else
+            echo "CHANGES=false" >> $GITHUB_ENV
+          fi
+
+      - name: Commit formatted code
+        if: env.CHANGES == 'true'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git commit -am "formatting"
+          git push

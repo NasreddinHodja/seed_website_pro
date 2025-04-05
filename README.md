@@ -30,4 +30,3 @@ Generate the website for production:
 # yarn
 yarn generate
 ```
-
