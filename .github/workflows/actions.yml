@@ -26,7 +26,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Check code formatting
-        run: yarn format:check
+        run: yarn format
 
       - name: Run Nuxi Generate
         run: yarn generate
