@@ -5,7 +5,7 @@ export default {
       label: "Contact us",
       links: [
         {
-          url: "https://x.com/SEED_dao",
+          url: "https://x.com/nasrezine",
           label: "{twit} @SEED_dao",
         },
         {
